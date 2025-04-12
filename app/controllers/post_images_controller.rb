@@ -12,10 +12,11 @@ class PostImagesController < ApplicationController
        redirect_to post_images_path
     else
       render :new
+    end 
   end
 
   def index
-      @post_images = PostImage.page(params[:page])
+    @post_images = PostImage.all
   end
    
   #詳細画面が表示される
@@ -36,5 +37,4 @@ class PostImagesController < ApplicationController
   def post_image_params
     params.require(:post_image).permit(:landscape_name, :image, :caption)
   end
-
 end
