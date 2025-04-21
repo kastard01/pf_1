@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ .background-image{
+  background-image: url(background.jpg);
+  background-size:contain;
+  width:550px; /*要素の幅指定*/
+  height:375px; /*要素の高さ指定*/
+  display: block;
+}

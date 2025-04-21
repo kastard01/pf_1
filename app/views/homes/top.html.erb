@@ -1,9 +1,11 @@
-<div class="col-md-6 mx-auto mt-5">
-   <h1><strong>~未来に残したい日本の風景~</strong></h1>
-   <p>みんなで共有したい日本の風景SNS community</p>
-   <div class="row">
-     <p class="ml-3"><a class="btn btn-info" href="/users/sign_in">Log in</a></p>
-     <p class="ml-3"><a class="btn btn-primary" href="/users/sign_up">Sign Up</a></p>
-     <p class="ml-3"><a class="btn btn-success" href="/users_guest_sign_in_path">Guest Login</a></p>
+<%= content_for :bg_top do %>
+   <div class="bg_top text-center">
+      <h1 class="title"><strong>~未来に残したい日本の風景~</strong></h1>
+      <p>SNS community</p>
+      <div class="d-flex justify-content-center">
+         <p class="ml-3"><a class="btn btn-info" href="/users/sign_in">ログイン</a></p>
+         <p class="ml-3"><a class="btn btn-primary" href="/users/sign_up">新規登録</a></p>
+         <p class="ml-3"><a class="btn btn-success" href="<%= user_users_guest_sign_in_path %>"ゲストログイン</a></p>
+      </div>
    </div>
-  </div>
+<% end %>

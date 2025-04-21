@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light py-4 mb-0">ユーザーログイン</h5>
+      <h5 class="text-dark bg-light py-4 mb-0">ログイン</h5>
       <div class="form-body p-4">
         <div class="mx-auto text-center">
-          <p>ユーザー名と<br>パスワードを入力してください。</p>
+          <p>メールアドレスと<br>パスワードを入力してください。</p>
         </div>
         <%= form_with model: @user, url: user_session_path do |f| %>
           <div class="input-group mb-3">
@@ -19,7 +19,7 @@
             </div>
             <%= f.password_field :password, placeholder: "パスワード", class: "form-control"  %>
           </div>
-            <%= f.submit "サインイン", class: "btn btn-lg btn-block btn-info mt-5" %>
+            <%= f.submit "ログイン", class: "btn btn-lg btn-block btn-info mt-5" %>
         <% end %>
       </div>
     </div>
