@@ -1,20 +1,24 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-    <h2>プロフィール編集</h2>
-    <%= form_with model:@user, local:true do |f| %>
-      <%= render 'layouts/errors', obj: @user %>
-      <div class="form-group">
-        <%= f.label :name, "ユーザー名" %>
-        <%= f.text_field :name, class: "form-control ユーザー名" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :caption, "一言" %>
-        <%= f.text_area :caption, class: "form-control 一言" %>
-      </div>
-      <div class="form-group">
-        <%= f.submit class: 'btn btn-secondary' %>
-      </div>
-    <% end %>
+      <h2>プロフィール編集</h2>
+      <%= form_with model: @user, local: true do |f| %>
+        <%= render 'layouts/errors', obj: @user %>
+        <div class="form-group">
+          <%= f.label :name, "ユーザー名" %>
+          <%= f.text_field :name, class: "form-control ユーザー名" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :introduction, "一言" %>
+          <%= f.text_area :introduction, class: "form-control 一言" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit class: 'btn btn-secondary btn-block' %>
+        </div>
+      <% end %>
+      <%= link_to "退会",user_path(current_user.id),
+          method: :delete, "data-confirm" => "本当に退会しますか？",
+          class: "btn btn-outline-danger btn-block mt-5" %>
+    </div>
   </div>
 </div>

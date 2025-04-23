@@ -5,6 +5,10 @@
     <div class='col-md-3'>
       <h2>ユーザー画面</h2>
       <%= render 'users/info', user: current_user %>
+      <% @posts.each do |post| %>
+        <% if post.user %>
+        <% end %>
+      <% end %>
       <h2 class="mt-3">新規投稿</h2>
       <%= link_to "新規投稿", new_post_path %>
       <%#= render 'form', post: @post %>

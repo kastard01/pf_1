@@ -5,7 +5,7 @@
       <div class="d-flex justify-content-center">
          <p class="ml-3"><a class="btn btn-info" href="/users/sign_in">ログイン</a></p>
          <p class="ml-3"><a class="btn btn-primary" href="/users/sign_up">新規登録</a></p>
-         <p class="ml-3"><a class="btn btn-success" href="<%= user_users_guest_sign_in_path %>"ゲストログイン</a></p>
+         <p class="ml-3"><%= link_to "ゲストログイン",users_guest_sign_in_path, method: :post,class:"btn btn-success" %></p>
       </div>
    </div>
 <% end %>

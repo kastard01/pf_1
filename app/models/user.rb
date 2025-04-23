@@ -3,10 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :name, presence: true
          
   has_many :posts, dependent: :destroy
 
-  has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_one_attached :profile_image
   has_many :favorites, dependent: :destroy
@@ -18,10 +19,6 @@ class User < ApplicationRecord
     end
     profile_image.variant(resize_to_limit: [width, height]).processed
   end
-
-  def introduction
-    "私の名前は#{name}です。"
-  end 
 
   GUEST_USER_EMAIL = "guest@example.com"
 
